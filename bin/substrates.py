@@ -507,7 +507,7 @@ class SubstrateTab(object):
         if rdir:
             self.output_dir = rdir
 
-        print('update(): self.output_dir = ', self.output_dir)
+        # print('update(): self.output_dir = ', self.output_dir)
 
         if self.first_time:
         # if True:
@@ -533,7 +533,6 @@ class SubstrateTab(object):
         # all_files = sorted(glob.glob(os.path.join(self.output_dir, 'output*.xml')))  # if the substrates/MCDS
 
         all_files = sorted(glob.glob(os.path.join(self.output_dir, 'snap*.svg')))   # if .svg
-        print('svg files: ',all_files)
         if len(all_files) > 0:
             last_file = all_files[-1]
             self.max_frames.value = int(last_file[-12:-4])  # assumes naming scheme: "snapshot%08d.svg"

@@ -186,6 +186,15 @@ void create_cell_types( void )
 	CellA.phenotype.volume.relative_rupture_volume=parameters.doubles( "Volume_relative_rupture_volume");
 	
 	
+	if ((parameters.bools("use_function_multiply_by_ratio"))==true)
+	{
+			
+			double factor=parameters.doubles("multiplication_ratio_value");
+			CellA.phenotype.volume.multiply_by_ratio(factor);
+		
+		
+	}
+	
 	// Set cell-cell adhesion to 5% of other cells 
 	//CellA.phenotype.mechanics.cell_cell_adhesion_strength *= parameters.doubles( "CellA_relative_adhesion" ); // 0.05; 
 	

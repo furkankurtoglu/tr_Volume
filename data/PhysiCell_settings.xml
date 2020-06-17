@@ -139,10 +139,22 @@
 	</microenvironment_setup>	
 	
 	<user_parameters>
-		<random_seed type="int" units="dimensionless">0</random_seed> 
+		<random_seed type="int" units="dimensionless" hidden="true">0</random_seed> 
 		<!-- example parameters from the template --> 
 		
 		<!-- motile cell type parameters --> 
+		<Volume type="string" Description="Modifying these variables will affect the volume of cells in simulation" >"Parameters"</Volume>
+		
+		<Volume_target_solid_cytoplasmic type="double" units="cubic_micron">488.5</Volume_target_solid_cytoplasmic>
+		<Volume_target_solid_nuclear type="double" units="cubic_micron">135.0</Volume_target_solid_nuclear>
+		<Volume_target_fluid_fraction type="double" units="cubic_micron">0.75</Volume_target_fluid_fraction>
+		<Volume_cytoplasmic_biomass_change_rate type="double" units="cubic_micron/min">0.0045</Volume_cytoplasmic_biomass_change_rate>
+		<Volume_nuclear_biomass_change_rate type="double" units="cubic_micron/min">0.0055</Volume_nuclear_biomass_change_rate>
+		<Volume_fluid_change_rate type="double" units="cubic_micron/min">0.05</Volume_fluid_change_rate>
+		<Volume_calcification_rate type="double" units="cubic_micron/min">0.0</Volume_calcification_rate>
+		
+		<Volume type="string" Description="Modifying these variables will affect the volume of cells temporarily and cells will go back to steady state volume" >"State Variables"</Volume>
+		
 		<Volume_Total type="double" units="cubic_micron">2494</Volume_Total>
 		<Volume_solid type="double" units="cubic_micron">623.5</Volume_solid>
 		<Volume_fluid type="double" units="cubic_micron">1870.5</Volume_fluid>
@@ -155,15 +167,15 @@
 		<Volume_cytoplasmic_fluid type="double" units="cubic_micron">1465.5</Volume_cytoplasmic_fluid>
 		<Volume_clacification_fraction type="double" units="none">0.0</Volume_clacification_fraction>
 		<Volume_cytoplasmic_to_nuclear_ratio type="double" units="none">3.6</Volume_cytoplasmic_to_nuclear_ratio>
-		<Volume_cytoplasmic_biomass_change_rate type="double" units="cubic_micron/min">0.0045</Volume_cytoplasmic_biomass_change_rate>
-		<Volume_nuclear_biomass_change_rate type="double" units="cubic_micron/min">0.0055</Volume_nuclear_biomass_change_rate>
-		<Volume_fluid_change_rate type="double" units="cubic_micron/min">0.05</Volume_fluid_change_rate>
-		<Volume_calcification_rate type="double" units="cubic_micron/min">0.0</Volume_calcification_rate>
-		<Volume_target_solid_cytoplasmic type="double" units="cubic_micron">488.5</Volume_target_solid_cytoplasmic>
-		<Volume_target_solid_nuclear type="double" units="cubic_micron">135.0</Volume_target_solid_nuclear>
-		<Volume_target_fluid_fraction type="double" units="cubic_micron">0.75</Volume_target_fluid_fraction>
-		<Volume_relative_rupture_volume type="double" units="none">2.0</Volume_relative_rupture_volume>
-		<Volume_rupture_volume type="double" units="cubic_micron">4988</Volume_rupture_volume>
+
+		
+		<Volume_relative_rupture_volume type="double" units="none" hidden="true">2.0</Volume_relative_rupture_volume>
+		<Volume_rupture_volume type="double" units="cubic_micron" hidden="true">4988</Volume_rupture_volume>
+		
+		<use_function_multiply_by_ratio type="bool" Description="recommended method to change volume in your simulation">false</use_function_multiply_by_ratio>
+		<multiplication_ratio_value type="double" Description="multiplies all parameters accordingly to scale current volume" >2.0</multiplication_ratio_value>
+		
+		
 
 	</user_parameters>
 	
